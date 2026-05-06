@@ -8,4 +8,6 @@ for file in files:
     name,extension = os.path.splitext(file)
     import shutil
     docs_folder = os.path.join(system_files ,"Documents")
+    if not os.path.exists(docs_folder):
+        os.makedirs(docs_folder)
 
