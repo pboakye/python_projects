@@ -18,11 +18,11 @@ for file in files:
     name,extension = os.path.splitext(file)
     if extension in extensions_directory:
         folder_name = extensions_directory[extension]
-        docs_folder = os.path.join(system_files, folder_name)
-        if not os.path.exists(docs_folder):
-            makedirs(docs_folder)
+        target_folder = os.path.join(system_files, folder_name)
+        if not os.path.exists(target_folder):
+            makedirs(target_folder)
         source = os.path.join(system_files, file)
-        destination = os.path.join(docs_folder, file)
+        destination = os.path.join(target_folder, file)
         shutil.move(source, destination)
         print(f"Done! Moved {file} to {folder_name}")
 
