@@ -10,7 +10,7 @@ extensions_directory = {".pdf" : "Documents",
                           ".png" : "Pictures",
                            ".mkv" : "Video"
                           }
-system_files = r"C:\Users\PRINCE\Desktop"
+system_files = r"C:\Users\PRINCE\Downloads"
 files = os.listdir(system_files)
 for file in files:
     print(f"checking files {files}")
