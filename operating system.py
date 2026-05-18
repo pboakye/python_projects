@@ -8,7 +8,11 @@ extensions_directory = {".pdf" : "Documents",
                           ".xlsx" :"Documents",
                           ".mp3" : "Music",
                           ".png" : "Pictures",
-                           ".mkv" : "Video"
+                           ".mkv" : "Video",
+                           ".heic" : "Pictures",
+                           ".exe"  : "Softwares",
+                           ".mp4"  : "Videos 2" ,
+                           ".HEIC" : "Pictures"
                           }
 system_files = r"C:\Users\PRINCE\Downloads"
 files = os.listdir(system_files)
