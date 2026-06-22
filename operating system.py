@@ -37,7 +37,3 @@ for file in files:
 
 
 
-
-
-
-
