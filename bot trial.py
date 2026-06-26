@@ -1,3 +1,11 @@
+
+property_listings = [
+    {"address": "123 Maple Drive", "price": 250000.00, "beds": 2},
+    {"address": "789 Oak Avenue", "price": 400000.00, "beds": 3},
+    {"address": "456 Pine Crescent", "price": 550000.00, "beds": 4},
+    {"address": "101 Palm Boulevard", "price": 300000.00, "beds": 3}
+]
+
 print("--- Real Estate Assistant Bot ---")
 print("Welcome! Let's Find Your Dream Home.")
 buyer_name = input(" What's Your Name? ")
