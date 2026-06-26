@@ -16,9 +16,10 @@ while True:
         print(" Please Enter a whole Number eg. 1,2,3 ")
 print("-- /n Summary of Search -- ")
 print(f" Client Name : {buyer_name.upper()}")
-print(f" Target Budget : $ {buyer_budget:, 2f}")
+print(f" Target Budget : $ {buyer_budget:}")
 print(f"Required Bedrooms : {buyer_beds} Bedrooms")
 print(" ------------------------------------------- ")
+print(" Great!! I'm searching our Database for Matching Properties ...... ")
 
 
 
