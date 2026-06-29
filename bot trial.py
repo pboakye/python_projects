@@ -1,7 +1,7 @@
 
 property_listings = [
-    {"address": "123 Maple Drive", "price": 250000.00, "beds": 2},
-    {"address": "789 Oak Avenue", "price": 400000.00, "beds": 3},
+    {"address": "123 Ahodwo Dabang", "price": 250000.00, "beds": 2},
+    {"address": "789 East Legon", "price": 400000.00, "beds": 3},
     {"address": "456 Pine Crescent", "price": 550000.00, "beds": 4},
     {"address": "101 Palm Boulevard", "price": 300000.00, "beds": 3}
 ]
@@ -28,6 +28,15 @@ print(f" Target Budget : $ {buyer_budget:}")
 print(f"Required Bedrooms : {buyer_beds} Bedrooms")
 print(" ------------------------------------------- ")
 print(" Great!! I'm searching our Database for Matching Properties ...... ")
+print("Matching Properties Found")
+matches_found = 0
+for house in property_listings:
+    if house ["price"] <= buyer_budget and house ["beds"] == buyer_beds:
+        print(f" {house['address']} |Price: ${house['price']:,.2f} | Beds: {house['beds']}")
+        matches_found +=1
+if matches_found == 0:
+    print("Sorry, No Properties Match Your Criteria Right Now. ")
+
 
 
 
