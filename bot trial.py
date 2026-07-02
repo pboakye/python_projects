@@ -35,11 +35,12 @@ for house in property_listings :
     if house ["price"] <= buyer_budget and house ["beds"] == buyer_beds:
         print(f" {house['address']} |Price: ${house['price']:,.2f} | Beds: {house['beds']}")
         matches_found +=1
+        buyer_shortlist.append(house)
 if matches_found == 0:
     print("Sorry, No Properties Match Your Criteria Right Now. ")
-    buyer_shortlist.append(house)
 print("Saved Buyer Shortlist in Memory")
 print(buyer_shortlist)
+
 
 
 
