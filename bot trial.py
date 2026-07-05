@@ -39,7 +39,7 @@ for house in property_listings :
 if matches_found == 0:
     print("Sorry, No Properties Match Your Criteria Right Now. ")
 print("Saved Buyer Shortlist in Memory")
-print(buyer_shortlist)
+print(buyer_shortlist) 
 
 
 
