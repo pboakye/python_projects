@@ -22,25 +22,41 @@ while True:
         break
     except ValueError:
         print(" Please Enter a whole Number eg. 1,2,3 ")
-print("-- /n Summary of Search -- ")
+print(" \n Summary of Search -- ")
 print(f" Client Name : {buyer_name.upper()}")
-print(f" Target Budget : $ {buyer_budget:}")
+print(f" Target Budget : $ {buyer_budget:,.2f}")
 print(f"Required Bedrooms : {buyer_beds} Bedrooms")
 print(" ------------------------------------------- ")
 print(" Great!! I'm searching our Database for Matching Properties ...... ")
 print("Matching Properties Found")
 matches_found = 0
-buyer_shortlist = []
-for house in property_listings :
-    if house ["price"] <= buyer_budget and house ["beds"] == buyer_beds:
-        print(f" {house['address']} |Price: ${house['price']:,.2f} | Beds: {house['beds']}")
-        matches_found +=1
-        buyer_shortlist.append(house)
-if matches_found == 0:
-    print("Sorry, No Properties Match Your Criteria Right Now. ")
-print("Saved Buyer Shortlist in Memory")
-print(buyer_shortlist) 
+def find_listings(listings,target_budget,target_beds):
+    stretch_budget = target_budget * 1.10
+    buyer_shortlist = []
+    for house in listings :
+     if house ["beds"] == target_beds:
+         if house["price"] <= target_budget:
+            print(f" Direct Match: {house['address']} |Price: ${house['price']:,.2f} | Beds: {house['beds']}")
+            buyer_shortlist.append(house)
+         elif house ["price"] <= stretch_budget:
+             print(f" Stretch Budget Option: {house['address']} |Price: ${house['price']:,.2f} | Beds: {house['beds']}")
+             buyer_shortlist.append(house)
+     elif house["beds"] == target_beds +1 and house ["price"] <= stretch_budget:
+         print(f" Upgrade Selection: {house['address']} |Price: ${house['price']:,.2f} | Beds: {house['beds']}")
+         buyer_shortlist.append(house)
+     elif house["beds"] == target_beds -1 and house ["price"] <= target_budget:
+         print(f" Value Option (-1 Bed) : {house['address']} |Price: ${house['price']:,.2f} | Beds: {house['beds']}")
+         buyer_shortlist.append(house)
 
+    return buyer_shortlist
+final_matches = find_listings(property_listings,buyer_budget,buyer_beds)
+
+
+if len(final_matches) == 0:
+    print("Sorry, No Properties Match Your Criteria Right Now. ")
+else:
+    print("Saved Buyer Shortlist in Memory")
+    print(final_matches)
 
 
 
